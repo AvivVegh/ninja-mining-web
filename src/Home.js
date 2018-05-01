@@ -10,8 +10,13 @@ class Home extends Component {
   }
 
   componentWillMount() {
-    // axios.get('https://stormy-mountain-48556.herokuapp.com/website/getPoolWebsite')
-    // .then(response => this.setState({ website : response.data.website} ))
+    axios.get('https://stormy-mountain-48556.herokuapp.com/website/getPoolWebsite')
+    .then((response) => {
+      console.log('res',response.data)
+      this.setState({ website : response.data.data.website}
+    )}
+    ).catch(error => error)
+
   }
 
   render() {
